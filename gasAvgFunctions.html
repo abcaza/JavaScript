@@ -1,0 +1,58 @@
+<!-- Amsi Cazares, 11/17/25 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WEB 114- Functions Project</title>
+  </head>
+  <body>
+    <h1> What is the purpose of a function? </h1>
+      <p>They are the main "building blocks" of the program to keep the code organized and efficient.</p>
+    <h3>Hit F12 to see the console log.</h3>
+
+    <script>
+      let entryCount = 0; 
+      let userName = prompt("Enter your name");
+      let calAvgGas = calcAvgGas();
+     
+       confirm(`${userName}'s average weekly gas bill is $${calAvgGas.toFixed(2)}`);
+
+    
+      if (entryCount === 0) {
+        confirm("No gas totals were entered.");
+      } else if (entryCount === 1) {
+        confirm(`You entered ${entryCount} gas total.`);
+      } else {
+        confirm(`You entered ${entryCount} gas totals.`);
+      }
+
+      function calcAvgGas() {
+        let count = 0;
+        let total = 0;
+        let gasBill = 0;
+
+        gassBill = parseFloat(
+          prompt("Enter your week's gas bill. Enter -1 when you are done."));
+     
+
+        while (gasBill !== -1) {
+          
+          total = total + gasBill;
+          count++;
+          gasBill = parseFloat(prompt("Enter your week's gass bill. Enter -1 when you are done."));
+        }
+
+          let gasAvg;
+          if (count > 0) {
+            gasAvg = total / count;
+          } else {
+            gasAvg = 0;
+      }
+      entryCount = count;
+     
+        return gasAvg;
+      }
+    </script>
+  </body>
+</html>
