@@ -63,7 +63,7 @@ body {
 }
 
 #screen {
-    position: relative; /* allows absolute children */
+    position: relative;
 }
 
 #clickCounter {
@@ -80,3 +80,4 @@ body {
     transform: scale(1.07);
     background-color: #313030;
 }
+
